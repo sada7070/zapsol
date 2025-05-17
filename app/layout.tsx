@@ -39,6 +39,7 @@ export default function RootLayout({
             <div className="flex flex-col min-h-screen">
               {/* Main content grows to push footer down */}
               <main className="flex-grow">{children}</main>
+              <Toaster />
               <Footer />
           </div>
         </ThemeProvider>
