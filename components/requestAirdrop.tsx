@@ -30,9 +30,11 @@ export function RequestAirdrop() {
 
             await connection.confirmTransaction(sig, "confirmed");
             alert(`✅ Airdropped ${amount} SOL to ${wallet.publicKey.toBase58()}`);
+            toast("Airdropped successfully!");
         }catch(err: any) {
             console.error("Airdrop failed:", err);
             alert("❌ Airdrop failed: " + (err.message || err));
+            toast("Airdropped failed!");
         } finally {
             setLoading(false);
         }

@@ -1,5 +1,6 @@
 "use client";
 
+import { CreateMint } from "@/components/createMint";
 import { RequestAirdrop } from "@/components/requestAirdrop";
 import { Navbar } from "@/components/ui/navbar";
 
@@ -13,7 +14,8 @@ export default function Home() {
       <WalletProvider wallets={[]} autoConnect>
         <WalletModalProvider>
           <Navbar />
-          <RequestAirdrop />
+          {/* <RequestAirdrop /> */}
+          <CreateMint/>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>
