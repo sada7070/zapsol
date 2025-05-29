@@ -74,6 +74,19 @@ export function CreateMint() {
         transaction.partialSign(mintKeypair);
 
         await wallet.sendTransaction(transaction, connection);
+
+        // 1. Get/Create Associated Token Account for the wallet
+        const tokenAccount = await getOrCreateAssociatedTokenAccount(
+            connection,
+            wallet,
+            mintKeypair.publicKey,
+            wallet.publicKey,
+            false,
+            undefined,
+            undefined,
+            TOKEN_2022_PROGRAM_ID
+        );
+
         alert(`Token mint created at ${mintKeypair.publicKey.toBase58()}`);
 
        }catch {
